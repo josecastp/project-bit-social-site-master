@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Job Listings</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap" rel="stylesheet">
+  <script src="./js/app.js"></script>
+  <script src="js/data.js"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>   
+  <header>
+    <div class="search">hola</div>
+   
+  </header>
+  <main>
+
+  </main>
+  <footer>
+
+  </footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>    
+  let main= document.querySelector('main');
+ 
+    for(var i=0;i < array.length;i++){
+
+ //pruebas:------
+  let valueNew=array[i].new;
+  if(valueNew){
+    valueNew.toString()
+    valueNew="NEW!"
+  }else{
+    valueNew="";
+  }
+  let valueFeatured=array[i].featured
+  if(valueFeatured){
+    valueFeatured.toString()
+    valueFeatured="FEATURED!"
+  }else{
+    valueFeatured="";
+  }
+  //finPuebas------------
+
+        main.innerHTML+=`
+        <div class="card"> <!-- DIV CARD -->
+      <div>
+        <!-- DIV VACIO -->
+      </div>
+      <div class="card_body">
+        <!-- DIV GENERAL -->
+        <div class="card_body_text">
+          <!-- DIV TEXTO -->
+          <div class="card_body_text_title">
+            <p class="company">${array[i].company}</p>
+            <p class="new">${valueNew}</p>
+            <p class="featured">${valueFeatured}</p>
+          </div>          
+          <h3>${array[i].position}</h3>
+          <p>${array[i].postedAt} ● ${array[i].contract} ● ${array[i].location}</p>
+        </div>
+        <div class="card_body_tags">
+          <!-- DIV ETIQUETAS -->
+          ${getTags(array[i].languages)}
+        </div>
+      </div>
+    </div>
+        `;
+    }
+    function getTags(tags){
+      let result = "";
+      tags.forEach(function(tag) {
+        result += `<p class="tag">${tag}</p>`;
+      })
+      console.log(result);
+      return result;  
+    }
+    /* 
+    1.Recuperar todos los objetos con clase "tag" y el div de búsqueda
+    2.A esos tags asignarles un evento de click
+    3.Crear una función que añada este tag al div de búsqueda
+    */
+    let tags = document.querySelectorAll("p.tag");
+    let search = document.querySelector(".search");
+  
+    tags.forEach((tag)=>{
+      tag.addEventListener("click", (event)=>{
+        console.log("ClickTag_OK!!");
+
+      })
+    })
+  
+  </script>
+</body>
+</html> 
