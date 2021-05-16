@@ -39,13 +39,14 @@
  
     for(var i=0;i < array.length;i++){
 
- //pruebas:------
+ //pruebas:(pinta el color de fondo si es false)------
   let valueNew=array[i].new;
   if(valueNew){
     valueNew.toString()
     valueNew="NEW!"
   }else{
     valueNew="";
+    //new.style.backgroundcolor="white";
   }
   let valueFeatured=array[i].featured
   if(valueFeatured){
@@ -53,6 +54,7 @@
     valueFeatured="FEATURED!"
   }else{
     valueFeatured="";
+    //featured.style.backgroundcolor="white";
   }
   //finPuebas------------
 
